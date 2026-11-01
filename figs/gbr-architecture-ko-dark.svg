@@ -20,7 +20,7 @@
 <text x="368" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">알아듣기 · 뜻 틀</text>
 <rect x="504" y="246" width="192" height="76" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.6"/>
 <text x="600" y="280" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">추론</text>
-<text x="600" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">연역 · 귀납 · 판정</text>
+<text x="600" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">연역 · 귀납 · 판단</text>
 <rect x="736" y="246" width="192" height="76" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.6"/>
 <text x="832" y="280" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">생성</text>
 <text x="832" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">말 계획 · 짓기</text>

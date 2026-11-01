@@ -11,16 +11,16 @@
 <text x="600" y="129" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">INTEREST · metacognition · autonomous learning loop — chooses what to learn, verifies what was learned</text>
 <rect x="504" y="162" width="424" height="56" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.4"/>
 <text x="716" y="185" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Imagination space</text>
-<text x="716" y="205" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">tests before speaking or acting · never writes memory</text>
+<text x="716" y="205" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">tests before speaking or acting · never writes to memory</text>
 <rect x="40" y="246" width="192" height="76" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.6"/>
 <text x="136" y="280" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">Perception</text>
 <text x="136" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">own engine: see · hear · sense</text>
 <rect x="272" y="246" width="192" height="76" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.6"/>
 <text x="368" y="280" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">Cognition</text>
-<text x="368" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">understanding · meaning frames</text>
+<text x="368" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">understand · meaning frames</text>
 <rect x="504" y="246" width="192" height="76" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.6"/>
 <text x="600" y="280" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">Reasoning</text>
-<text x="600" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">deduce · induce · decide</text>
+<text x="600" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">deduce · induce · judge</text>
 <rect x="736" y="246" width="192" height="76" rx="10" fill="#1b1910" stroke="#caab29" stroke-width="1.6"/>
 <text x="832" y="280" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">Generation</text>
 <text x="832" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#9da7b3">plan · realize</text>
