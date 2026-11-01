@@ -1,0 +1,8 @@
+form	group	boards	verified	seen_share
+whole	all	10000	10000	0.2621
+unseen_only	all	7379	7379	0.0000
+band	0	1410	1410	0.2574
+band	1-9	2386	2386	0.2519
+band	10-49	5102	5102	0.2579
+band	50-99	987	987	0.2290
+band	100+	115	115	1.0000

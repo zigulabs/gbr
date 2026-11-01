@@ -1,0 +1,18 @@
+[package]
+name = "sudoku-rup-prover"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "Apache-2.0"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "sudoku-rup-prover"
+path = "src/main.rs"
+
+[dependencies]
+sudoku-rup-check = { path = "../sudoku-rup-check" }
+
+[workspace]

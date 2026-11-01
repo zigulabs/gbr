@@ -1,0 +1,20 @@
+Outside check of the 10,000 answer certificates with drat-trim
+
+certificates        certificates/sudoku_10k_certificates.tar.gz
+archive sha256      310df6ccd90aa8c760b85b42d934386ea24358b61c1be2d11840048b17c98ea8
+drat-trim           https://github.com/marijnheule/drat-trim
+commit              2e3b2dc0ecf938addbd779d42877b6ed69d9a985
+drat-trim.c sha256  d834b649f437e091597f5347f259b9f681087f89ca0844d0cee250a1a1a0c2ee
+build               gcc drat-trim.c -std=c99 -O2 -o drat-trim   (the line of the source's Makefile)
+per puzzle          sudoku-rup-check dimacs <question> <answer> > puzzle.cnf
+                    sudoku-rup-check drat certs/proofs/<line>.drup > puzzle.drat
+                    drat-trim puzzle.cnf puzzle.drat
+                    (<question> and <answer>: the columns of that line of test.csv)
+puzzles             10000
+s VERIFIED          10000
+not VERIFIED        0
+
+How drat-trim reached VERIFIED (its own report lines):
+8932  "detected empty clause; start verification via backward checking": checked through the certificate's lemmas
+1068  "UNSAT via unit propagation on the input instance": the formula with the clause that blocks the grid is
+      already refuted by unit propagation; these are the 1068 puzzles whose certificate is empty

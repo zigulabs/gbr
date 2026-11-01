@@ -1,0 +1,22 @@
+Puzzles outside the dataset: the public sources and the selection rule (fixed before the run)
+
+file            bytes     sha256                                                            source
+sudoku.txt      1999      453b467d42cbd1e61502f9823ad90091615aa0efc446b6620cc6a2eae53408ab  https://raw.githubusercontent.com/attractivechaos/plb/master/sudoku/sudoku.txt
+top95.txt       7790      b16eff35fbe41fb7b122f21c5c6ba30b85861b47946d33257070df1a69cddd36  https://norvig.com/top95.txt
+hardest.txt     902       398e1e5df4f50723078e3b510e00ea7eb9e104c521a9a186b4c20cd066c0459f  https://norvig.com/hardest.txt
+diabolical.txt  11968100  08553d0c1145ea4d7c13008040f47ea8205d21fe1eaf8f4ab17a1a6981928b35  https://raw.githubusercontent.com/grantm/sudoku-exchange-puzzle-bank/master/diabolical.txt (public domain)
+
+Selection, in this order; a puzzle already taken keeps its first place and its later copies are left out:
+  named      four widely published hard puzzles (AI Escargot, Inkala 2012, Easter Monster, the first line of top95.txt)
+             and the 20 lines of sudoku.txt (named hard puzzles)
+  norvig     the 95 lines of top95.txt and the 11 lines of hardest.txt
+  bank_head  the first 500 lines of diabolical.txt (the file orders its lines by a hash of the digits)
+  bank_top   the 100 highest-rated lines of diabolical.txt (rating descending, ties by line order)
+730 entries, 4 later copies left out: 726 puzzles. results.tsv names the source line of each (Inkala 2012, which none of the four
+files holds, by its name in verify/sudoku-rup-prover/tests/cells.rs).
+
+Overlap with the dataset (train.csv and test.csv of sapientinc/sudoku-extreme, every question):
+  same text                  0 of 726
+  same up to symmetry        115 of 726 (transposition, the order of the bands and of the stacks, the order of the rows within a
+                             band and of the columns within a stack, a relabelling of the digits)
+  outside, up to symmetry    611 of 726
