@@ -127,7 +127,7 @@ diff -r certs/proofs proofs2
 - 데이터셋 밖 611판은 611/611 풀고 확인됐습니다. 바깥 출처의 판이므로 「누구도 본 적 없는 판」이 아니라 「이 데이터셋 밖의 판」입니다.
 - 「확인됨」 = 엔진의 답으로 공개 증명기가 지은 증명서를 공개 검사기가 받아들이고(그 답이 유일한 해), drat-trim도 VERIFIED.
 - 바깥에서 확인할 수 있는 것은 「판마다 증명서가 유일한 해를 정하고, 그 해의 sha256이 우리가 밝힌 엔진 답의 sha256(`answer_sha256`)과 같다」까지입니다. 엔진이 그 답을 냈다는 근거(풀이 과정 증명서)는 1만 판과 같이 안에서 확인했습니다.
-- 판 글은 이 절의 표와 파일에 싣지 않습니다(원천마다 사용 조건이 다름). 예외로, 공개 검사기 · 증명기의 시험 파일(`verify/sudoku-rup-check/tests/cells.rs` · `verify/sudoku-rup-prover/tests/cells.rs`)에는 널리 알려진 판 몇 개가 시험 자료로 들어 있고, 726판 가운데 넷(AI Escargot · Inkala 2012 · Easter Monster · `top95.txt` 첫 줄)이 거기에 있습니다(Inkala 2012는 정답 격자까지). `build_boards.py`는 네 원천 파일 어디에도 없는 Inkala 2012를 증명기 시험 파일에서 꺼냅니다.
+- 판 글은 이 절의 표와 파일에 싣지 않습니다(원천마다 사용 조건이 다름). 예외로, 공개 검사기 · 증명기의 시험 코드(`verify/sudoku-rup-check/tests/cells.rs` · `verify/sudoku-rup-prover/tests/cells.rs` · `verify/sudoku-rup-prover/src/lib.rs`의 단위 시험)에는 널리 알려진 판 몇 개가 시험 자료로 들어 있고, 726판 가운데 넷(AI Escargot · Inkala 2012 · Easter Monster · `top95.txt` 첫 줄)이 거기에 있습니다(Inkala 2012는 검사기 시험 파일에, AI Escargot · Inkala 2012 · Easter Monster는 증명기 단위 시험에 정답 격자까지). `build_boards.py`는 네 원천 파일 어디에도 없는 Inkala 2012를 증명기 시험 파일에서 꺼냅니다.
 - `outside_dataset_726/results.tsv`에 판마다 원천 파일과 줄, 판 글의 sha256, 엔진 답의 sha256, 데이터셋 겹침(글자 · 대칭 · 처음 맞은 데이터셋 줄), 결과가 있습니다.
 
 확인하려면 원천 파일 넷을 `sources` 폴더에 내려받고(주소와 파일 sha256은 `sources.txt`), 위에서 지은 검사기로 다음을 돌립니다.
@@ -148,7 +148,7 @@ verify/sudoku-rup-check/target/release/sudoku-rup-check batch outside_boards.tsv
 
 ## 라이선스
 
-이 묶음은 저장소 맨 위 `LICENSE`(Apache License 2.0)를 따릅니다. 예외로, 검사기 · 증명기 시험 파일(`verify/*/tests/cells.rs`)에 시험 자료로 실은 널리 알려진 판의 판 글과 정답 격자는 이 라이선스에 들지 않습니다(각 판의 공개 출처에서 온 것입니다).
+이 묶음은 저장소 맨 위 `LICENSE`(Apache License 2.0)를 따릅니다. 예외로, 검사기 · 증명기 시험 파일(`verify/*/tests/cells.rs`)과 증명기 단위 시험(`verify/sudoku-rup-prover/src/lib.rs`)에 시험 자료로 실은 널리 알려진 판의 판 글과 정답 격자는 이 라이선스에 들지 않습니다(각 판의 공개 출처에서 온 것입니다).
 
 ---
 
@@ -279,7 +279,7 @@ With the same engine under the same conditions (each puzzle once), 726 standard 
 - The 611 puzzles outside the dataset: 611 of 611 solved and verified. They come from outside sources, so they are "outside this dataset", not "never seen by anyone".
 - "Verified": the public checker accepts the certificate the public prover built from the engine's answer (that answer is the only solution), and drat-trim reports VERIFIED.
 - What can be checked from outside is that each certificate fixes a unique solution and that its sha256 equals the sha256 of the stated engine answer (`answer_sha256`). The evidence that the engine produced the answer (the certificates of the solving process) was checked internally, as for the 10,000.
-- Puzzle text is left out of this section's table and files (the sources have different terms of use). As an exception, the test files of the public checker and prover (`verify/sudoku-rup-check/tests/cells.rs` · `verify/sudoku-rup-prover/tests/cells.rs`) hold a few widely published puzzles as test data, four of the 726 among them (AI Escargot · Inkala 2012 · Easter Monster · the first line of `top95.txt`; Inkala 2012 with its solution grid). `build_boards.py` takes Inkala 2012, which none of the four source files holds, from the prover's test file.
+- Puzzle text is left out of this section's table and files (the sources have different terms of use). As an exception, the test code of the public checker and prover (`verify/sudoku-rup-check/tests/cells.rs` · `verify/sudoku-rup-prover/tests/cells.rs` · the unit test in `verify/sudoku-rup-prover/src/lib.rs`) holds a few widely published puzzles as test data, four of the 726 among them (AI Escargot · Inkala 2012 · Easter Monster · the first line of `top95.txt`; Inkala 2012 with its solution grid in the checker's test file, and AI Escargot, Inkala 2012 and Easter Monster with their solution grids in the prover's unit test). `build_boards.py` takes Inkala 2012, which none of the four source files holds, from the prover's test file.
 - `outside_dataset_726/results.tsv` gives, per puzzle, the source file and line, the sha256 of the puzzle text, the sha256 of the engine's answer, the dataset overlap (same text · up to symmetry · the first dataset line matched) and the results.
 
 To check, download the four source files into a folder `sources` (addresses and file sha256 in `sources.txt`) and run, with the checker built above:
@@ -300,4 +300,4 @@ verify/sudoku-rup-check/target/release/sudoku-rup-check batch outside_boards.tsv
 
 ## License
 
-This package is under the repository's top-level `LICENSE` (Apache License 2.0). As an exception, the texts and solution grids of the widely published puzzles kept as test data in the test files of the checker and the prover (`verify/*/tests/cells.rs`) are not covered by this license; they come from their public sources.
+This package is under the repository's top-level `LICENSE` (Apache License 2.0). As an exception, the texts and solution grids of the widely published puzzles kept as test data in the test files of the checker and the prover (`verify/*/tests/cells.rs`) and in the prover's unit test (`verify/sudoku-rup-prover/src/lib.rs`) are not covered by this license; they come from their public sources.
